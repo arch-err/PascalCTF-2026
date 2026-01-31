@@ -1,0 +1,5 @@
+# Netscape HTTP Cookie File
+# https://curl.haxx.se/rfc/cookie_spec.html
+# This is a generated file! Do not edit.
+
+ctf.pascalctf.it	FALSE	/	FALSE	1770473595	session	6d6e6803-7741-4547-b78b-933ef5d383d7.9VHSlsyLWwnKSw3TazWJ_Q1fnMI
