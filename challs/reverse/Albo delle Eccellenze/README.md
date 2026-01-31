@@ -34,6 +34,8 @@
    Sex: M
    Place of birth: anywhere
    ```
+> [!NOTE]
+> What the actual fuck?! This chall must be broken!
 
 ### Flag
 > `pascalCTF{g00d_luck_g3tt1ng_your_pr1zes_n0w}`
