@@ -60,8 +60,7 @@ There'll be 5 challenges for each of these categories:*
 - [x] [ZazaStore](./challs/web/ZazaStore)
 - [ ] [Travel Playlist](./challs/web/Travel%20Playlist)
 - [x] [PDFile](./challs/web/PDFile)
-- [ ] [Vibefy](./challs/web/Vibefy)
-> This one was removed halfway through the ctf :(
+- [ ] [Vibefy](./challs/web/Vibefy) (*This one was removed halfway through the ctf :(*)
 
 
 ## Results
