@@ -69,7 +69,7 @@ There'll be 5 challenges for each of these categories:*
 
 
 ## Results
-[Link to the full scoreboard](./assets/Scoreboard (FULL).png)
+[Link to the full scoreboard](./assets/Scoreboard%20\(FULL\).png)
 
 ![arch-err](assets/arch-err.png)
 
