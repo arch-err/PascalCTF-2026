@@ -22,6 +22,10 @@ There'll be 5 challenges for each of these categories:*
 
 
 ## Challenges
+**Solved: (26/29)**
+
+**Total Points: 6014**
+
 ### Artificial Intelligence
 - [x] [Tea Guardian](./challs/ai/Tea%20Guardian)
 - [x] [Selfish AI](./challs/ai/Selfish%20AI)
@@ -40,27 +44,33 @@ There'll be 5 challenges for each of these categories:*
 - [x] [Geoguesser](./challs/misc/Geoguesser)
 - [x] [Stinky Slim](./challs/misc/Stinky%20Slim)
 - [x] [Very Simple Framer](./challs/misc/Very%20Simple%20Framer)
-- [ ] [Keep Scripting!](./challs/misc/Keep%20Scripting!)
+- [x] [Keep Scripting!](./challs/misc/Keep%20Scripting!)
 - [ ] [SurgoCompany](./challs/misc/SurgoCompany)
 
 ### Binary Exploitation
 - [x] [Malta Nightlife](./challs/pwn/Malta%20Nightlife)
-- [ ] [YetAnotherNoteTaker](./challs/pwn/YetAnotherNoteTaker)
+- [x] [YetAnotherNoteTaker](./challs/pwn/YetAnotherNoteTaker)
 - [x] [AHC - Average Heap Challenge](./challs/pwn/AHC%20-%20Average%20Heap%20Challenge)
-- [ ] [Grande Inutile Tool](./challs/pwn/Grande%20Inutile%20Tool)
+- [x] [Grande Inutile Tool](./challs/pwn/Grande%20Inutile%20Tool)
+- [ ] [Packet Tracer 2](./challs/pwn/Packet%20Tracer%202)
 
 ### Reverse Engineering
 - [x] [AuraTester2000](./challs/reverse/AuraTester2000)
-- [ ] [StrangeVM](./challs/reverse/StrangeVM)
+- [x] [StrangeVM](./challs/reverse/StrangeVM)
 - [x] [Albo delle Eccellenze](./challs/reverse/Albo%20delle%20Eccellenze)
 - [ ] [curly-crab](./challs/reverse/curly-crab)
 
 ### Web Security
 - [x] [JSHit](./challs/web/JSHit)
 - [x] [ZazaStore](./challs/web/ZazaStore)
-- [ ] [Travel Playlist](./challs/web/Travel%20Playlist)
+- [x] [Travel Playlist](./challs/web/Travel%20Playlist)
 - [x] [PDFile](./challs/web/PDFile)
 - [ ] [Vibefy](./challs/web/Vibefy) (*This one was removed halfway through the ctf :(*)
 
 
 ## Results
+[Link to the full scoreboard](./assets/Scoreboard (FULL).png)
+
+![arch-err](assets/arch-err.png)
+
+![Scoreboard Top 100](assets/Scoreboard%20(Top%20100).png)

